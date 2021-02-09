@@ -2,7 +2,7 @@ package util;
 
 public class Student implements CSVPrintable{
 	private String name;
-	private long phone; 
+	protected long phone; 
 	private int StudentID;
 	
 	@Override
@@ -19,7 +19,7 @@ public class Student implements CSVPrintable{
 
 	@Override
 	public void csvPrintln() {
-		
+		String print = getName() + "," + getID() + "," + phone;
 		
 	}
 

@@ -25,16 +25,52 @@ public class Main {
 			System.out.println("Please enter: Position, Name, StudentID, TeacherID, Phone#");
 			Scanner row = new Scanner(System.in);
 			String info = row.nextLine();	
-			String [] splitString = info.split("\\s+");
-			System.out.println(info);
-			/*
-			System.out.println(splitString[0]);
-			System.out.println(splitString[1]);
-			System.out.println(splitString[2]);
-			System.out.println(splitString[3]);
-			System.out.println(splitString[4]);
-			*/
+			String [] split = info.split(" ");
+			System.out.println(split[0]);
+			int x = -1;
 			
+			position = split[0];
+			while(x == -1) {
+			try {
+				if(!(position.equals("Student") || position.equals("Teacher") || position.equals("TA"))) {
+					throw new MyExceptions();
+				}
+				else {
+					x++;
+				}
+
+			}
+			catch(MyExceptions e)	{
+			
+				System.out.println(e.getMessage());
+				System.out.println("Please re-enter position for row " + i);
+				position = row.nextLine();
+				
+				
+			}
+		}
+			name = split[1];
+			x = -1;
+			
+			while(x == -1) {
+				try {
+					if(name.matches(info)) {
+						throw new MyExceptions();
+					}
+					else {
+						x++;
+					}
+
+				}
+				catch(MyExceptions e)	{
+				
+					System.out.println(e.getMessage());
+					System.out.println("Please re-enter position for row " + i);
+					position = row.nextLine();
+					
+					
+				}
+			}
 			
 			
 			

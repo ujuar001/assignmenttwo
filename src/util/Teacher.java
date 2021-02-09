@@ -19,7 +19,7 @@ public class Teacher implements CSVPrintable{
 
 	@Override
 	public void csvPrintln() {
-		// TODO Auto-generated method stub
+		String print = getName() + "," + getID() + "," + phone;
 		
 	}
 
