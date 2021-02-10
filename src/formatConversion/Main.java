@@ -54,7 +54,7 @@ public class Main {
 			
 			while(x == -1) {
 				try {
-					if(name.matches(info)) {
+					if(name.equals("John,Doe")) {
 						throw new MyExceptions();
 					}
 					else {
@@ -65,13 +65,34 @@ public class Main {
 				catch(MyExceptions e)	{
 				
 					System.out.println(e.getMessage());
-					System.out.println("Please re-enter position for row " + i);
-					position = row.nextLine();
+					System.out.println("Please re-enter FirstName,LastName for row " + i);
+					name = row.nextLine();
 					
 					
 				}
 			}
 			
+			x = -1;
+			studentID = Integer.parseInt(split[2]);
+			while(x == -1) {
+				try {
+					if(studentID == ) {
+						throw new MyExceptions();
+					}
+					else {
+						x++;
+					}
+
+				}
+				catch(MyExceptions e)	{
+				
+					System.out.println(e.getMessage());
+					System.out.println("Please re-enter FirstName,LastName for row " + i);
+					name = row.nextLine();
+					
+					
+				}
+			}
 			
 			
 		}
