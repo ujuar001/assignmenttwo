@@ -1,9 +1,11 @@
 package util;
 
+import formatConversion.CSVProgram;
+
 public class Student implements CSVPrintable{
-	private String name;
-	protected long phone; 
-	private int StudentID;
+	 private String name;
+	 protected long phone; 
+	 private int studentID;
 	
 	@Override
 	public String getName() {
@@ -14,13 +16,26 @@ public class Student implements CSVPrintable{
 	@Override
 	public int getID() {
 		// TODO Auto-generated method stub
-		return StudentID;
+		return studentID;
 	}
 
 	@Override
 	public void csvPrintln() {
 		String print = getName() + "," + getID() + "," + phone;
+		CSVProgram.csvPrinter(print);
+		System.out.println(print);
 		
+	}
+	public void setName(String name)	{
+		this.name = name;
+	}
+	
+	public void setPhone(long phone)	{
+		this.phone = phone;
+	}
+	
+	public void setStudentID(int studentID)	{
+		this.studentID = studentID;
 	}
 
 }
