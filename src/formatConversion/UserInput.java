@@ -11,37 +11,15 @@ public class UserInput extends CSVProgram {
 		  String teacherID;
 		  String phone;
 
-	
-		/*
-		boolean error = false;
-		do
-		{
-			error = false;
-			try {
-				System.out.println("Please enter the amount 'n'");
-				nCount = n.nextInt();
-			}
-			catch(Exception e){
-				System.out.println("Please enter a number!");
-				error = true;
-				n.nextLine();
-			}
-		}while(error);
-			*/
-		
-		
-		
-		
-		//
 		Object[][] csvList = new Object[5][nCount];	
 		for (int i = 0; i <= nCount - 1; i++) {
 			System.out.println("Please enter: Position, Name, StudentID, TeacherID, Phone#");
-			Scanner row = new Scanner(System.in);
+			Scanner row = new Scanner(System.in);//Position, FirstName,LastName, 00000, 00000, 1234567890
 			String info = row.nextLine();
 			String[] split = info.split(" ");
 			x = -1;
 
-			//validate position input
+			//validates position input
 			position = split[0];
 			while (x == -1) {
 				try {

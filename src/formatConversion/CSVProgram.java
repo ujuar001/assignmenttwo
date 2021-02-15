@@ -1,7 +1,7 @@
 package formatConversion;
 
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,11 +15,12 @@ public class CSVProgram {
 	public static int x = -1;
 	public static int nCount = 0;
 	public static final String FILENAME = "out.csv";
+	public static final String OUTPUT_FOLDER = System.getProperty("user.dir")+"/output/";
 	
 	public static void csvPrinter(Object object){
 
 		try {
-			FileWriter out = new FileWriter(FILENAME,false);
+			FileWriter out = new FileWriter(new File(OUTPUT_FOLDER,FILENAME));
 			BufferedWriter bw = new BufferedWriter(out);
 			PrintWriter printer = new PrintWriter(bw);
 			for(int i = 0; i<= nCount; i++)
@@ -101,25 +102,6 @@ public class CSVProgram {
 
 	}
 	
-
-	
-	
-	/*public static void startProgram() {
-		boolean error = false;
-		do
-		{
-			error = false;
-			try {
-				System.out.println("Please enter the amount 'n'");
-				nCount = n.nextInt();
-			}
-			catch(Exception e){
-				System.out.println("Please enter a number!");
-				error = true;
-				n.nextLine();
-			}
-		}while(error);
-	}*/
 	
 
 	
