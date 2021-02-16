@@ -1,26 +1,50 @@
 package formatConversion;
 
-public class Main {
-	//public static final String OUTPUT_FOLDER = System.getProperty("user.dir")+"/output/";
-	//public static final String FILENAME = "out.csv";
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 
-	// public static final String INPUT_FOLDER =
-	// System.getProperty("user.dir")+"/input/";
-	//public static String infoEntered;
-	//public static Scanner n = new Scanner(System.in);
-	//public static int x = -1;
-	//public static int nCount = 0;
+public class Main {
+	public static final String FILENAME = "out.csv";
+	static ArrayList<Object> finalPrintInfo = new ArrayList<Object>();
 	
 	// row is broken into different variables
 	public static void main(String args[]){
 		CSVProgram.startProgram();
-		System.out.println("Complete");
 		
+		stringsTOCSV(finalPrintInfo);
 		
 		
 		
 	}
 	
+	public static void csvPrinter(Object object)	{
+		finalPrintInfo.add(object);
+	}
+	
+	public static void stringsTOCSV(Object object){
+
+		try {
+			FileWriter out = new FileWriter(FILENAME);
+			BufferedWriter bw = new BufferedWriter(out);
+			PrintWriter printer = new PrintWriter(bw);
+			
+			for(int x = 0; x <= finalPrintInfo.size() - 1; x++)	{
+				
+			printer.println(finalPrintInfo.get(x));
+
+			printer.flush();
+
+			}
+			printer.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+
+		}
+		
+	}
 	
 
 		//System.out.println(cvsList);

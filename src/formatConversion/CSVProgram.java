@@ -14,26 +14,9 @@ public class CSVProgram {
 	public static Scanner n = new Scanner(System.in);
 	public static int x = -1;
 	public static int nCount = 0;
-	public static final String FILENAME = "out.csv";
-	public static final String OUTPUT_FOLDER = System.getProperty("user.dir")+"/output/";
+	//public static final String OUTPUT_FOLDER = System.getProperty("user.dir")+"/output/";
 	
-	public static void csvPrinter(Object object){
 
-		try {
-			FileWriter out = new FileWriter(new File(OUTPUT_FOLDER,FILENAME));
-			BufferedWriter bw = new BufferedWriter(out);
-			PrintWriter printer = new PrintWriter(bw);
-			for(int i = 0; i<= nCount; i++)
-			printer.println(object);
-			printer.flush();
-			printer.close();
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			//e.printStackTrace();
-		}
-		
-	}
 	
 	public static int getNCount()	{
 		return nCount;
@@ -86,11 +69,25 @@ public class CSVProgram {
 				//System.out.println("TA");
 				TA ta = new TA();
 				String nameTemp = finalList[1][x].toString();
-				int studentID = Integer.parseInt(finalList[2][x].toString());
+				
 				//int teacherID = Integer.parseInt(finalList[3][x].toString());
+				
+				int c = Integer.parseInt(finalList[2][x].toString());
+				int d = Integer.parseInt(finalList[3][x].toString());
+				int finalID = 0;
+				
+				if(c > d)	{
+					finalID = Integer.parseInt(finalList[2][x].toString());
+				}else if(d > c){
+					finalID = Integer.parseInt(finalList[3][x].toString());
+				}else {
+					
+				}
+				
+				
 				long phone = Long.parseLong(finalList[4][x].toString());
 				ta.setName(nameTemp);
-				ta.setStudentID(studentID);
+				ta.setStudentID(finalID);
 				ta.setPhone(phone);
 				ta.csvPrintln();
 			}

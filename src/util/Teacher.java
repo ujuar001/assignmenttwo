@@ -1,5 +1,6 @@
 package util;
 import formatConversion.CSVProgram;
+import formatConversion.Main;
 
 public class Teacher implements CSVPrintable{
 	private String name;
@@ -36,7 +37,7 @@ public class Teacher implements CSVPrintable{
 	@Override
 	public void csvPrintln() {
 		String print = getName() + "," + getID() + "," + phone;
-		CSVProgram.csvPrinter(print);
+		Main.csvPrinter(print);
 		System.out.println(print);
 		
 	}

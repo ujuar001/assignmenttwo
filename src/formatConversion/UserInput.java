@@ -13,7 +13,7 @@ public class UserInput extends CSVProgram {
 
 		Object[][] csvList = new Object[5][nCount];	
 		for (int i = 0; i <= nCount - 1; i++) {
-			System.out.println("Please enter: Position, Name, StudentID, TeacherID, Phone#");
+			System.out.println("Please enter: Postion FirstName,LastName studentID teacherID PhoneNumber");
 			Scanner row = new Scanner(System.in);//Position, FirstName,LastName, 00000, 00000, 1234567890
 			String info = row.nextLine();
 			String[] split = info.split(" ");
